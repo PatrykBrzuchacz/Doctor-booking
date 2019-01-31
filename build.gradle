@@ -33,7 +33,9 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
     testImplementation('org.springframework.security:spring-security-test')
-
+//    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.0.Final'
+  //  compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '4.1.7.Final'
+    compile group: 'javax.xml.bind', name: 'jaxb-api', version: '2.2.4'
     implementation('org.flywaydb:flyway-core')
     runtimeOnly('mysql:mysql-connector-java')
 
