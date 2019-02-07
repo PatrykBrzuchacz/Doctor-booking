@@ -45,16 +45,18 @@ public class UserServiceTest {
     void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        role = new Role(3L, "ROLE_USER", "User Role");
+        role = new Role(3L, "ROLE_PATIENT", "User Role");
         user = new User(1L, "name", "password", role);
-        userCredentials = new UserCredentials("name", "pd");
+        userCredentials = new UserCredentials("name", "password");
         user1 = new User();
     }
 
+//
 //    @Test
-//    public void saveUser_Test() {
+//    public void save_Test() {
+//        System.out.println(userCredentials.getPassword());
 //        when(userRepository.save(any(User.class))).thenReturn(user);
-//        User insertedUser = userService.save(userCredentials);
+//        User insertedUser = userService.save(userCredentials,role);
 //
 //        assertAll(
 //                () -> assertNotNull(insertedUser),
@@ -73,7 +75,7 @@ public class UserServiceTest {
     public void getAuthority_Test() {
         assertAll(
                 () -> assertNotNull(userService.getAuthority(user)),
-                () -> assertEquals(user.getRoles().getName(), "ROLE_USER")
+                () -> assertEquals(user.getRoles().getName(), "ROLE_PATIENT")
         );
     }
 
