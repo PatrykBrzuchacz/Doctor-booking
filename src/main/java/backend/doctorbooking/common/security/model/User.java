@@ -1,6 +1,7 @@
 package backend.doctorbooking.common.security.model;
 
 import backend.doctorbooking.doctor.model.Clinic;
+import backend.doctorbooking.doctor.model.ClinicBranch;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,6 +40,8 @@ public class User {
     @OneToMany(mappedBy = "owner")
     private List<Clinic> clinics = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "doctors")
+    private List<ClinicBranch> clinicBranches = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
