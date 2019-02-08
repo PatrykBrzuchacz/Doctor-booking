@@ -19,7 +19,7 @@ public class Doctor {
    // private List<ReservationRequest> reservationRequests = new ArrayList<>();
 
     @OneToOne
-    @JoinColumn(name = "doctor_id")
+    @JoinColumn(name = "user_id")
     private User userDoctor;
 
     @ManyToOne

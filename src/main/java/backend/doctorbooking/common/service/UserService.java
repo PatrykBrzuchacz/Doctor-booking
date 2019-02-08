@@ -5,6 +5,11 @@ import backend.doctorbooking.common.repository.UserRepository;
 import backend.doctorbooking.common.security.model.Role;
 import backend.doctorbooking.common.security.model.User;
 import backend.doctorbooking.common.security.model.UserCredentials;
+import backend.doctorbooking.doctor.model.Doctor;
+import backend.doctorbooking.doctor.repository.DoctorRepository;
+import backend.doctorbooking.patient.model.Patient;
+import backend.doctorbooking.patient.repository.PatientRepository;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,6 +33,12 @@ public class UserService implements UserDetailsService {
     @Autowired
     private BCryptPasswordEncoder bcryptEncoder;
 
+    @Autowired
+    private PatientRepository patientRepository;
+
+    @Autowired
+    private DoctorRepository doctorRepository;
+
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findByUsername(username);
         if (user == null) {
@@ -43,12 +54,25 @@ public class UserService implements UserDetailsService {
         return authorities;
     }
 
-    public User save(UserCredentials user, Role role) {
+    public Patient savePatient(UserCredentials user, Role role) {
+        Patient patient = new Patient();
+        patient.setUserPatient(createUser(user,role));
+       return patientRepository.save(patient);
+    }
+
+    public Doctor saveDoctor(UserCredentials user, Role role) {
+       Doctor doctor = new Doctor();
+        doctor.setUserDoctor(createUser(user,role));
+        return doctorRepository.save(doctor);
+    }
+
+    public User createUser(UserCredentials user, Role role){
         User newUser = new User();
         newUser.setUsername(user.getUsername());
         newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
         newUser.setRoles(role);
-        return userRepository.save(newUser);
+        userRepository.save(newUser);
+        return newUser;
     }
 
     private void checkUsername(String username){
@@ -57,16 +81,16 @@ public class UserService implements UserDetailsService {
         if(usernameExists) throw new UsernameAlreadyExistsException();
     }
 
-    public User registerPatient(UserCredentials user){
+    public Patient registerPatient(UserCredentials user){
         checkUsername(user.getUsername());
 
-        return save(user,roleService.getPatientRole());
+        return savePatient(user,roleService.getPatientRole());
     }
 
-    public User registerDoctor(UserCredentials user){
+    public Doctor registerDoctor(UserCredentials user){
         checkUsername(user.getUsername());
 
-        return save(user, roleService.getDoctorRole());
+        return saveDoctor(user, roleService.getDoctorRole());
     }
 
 }
