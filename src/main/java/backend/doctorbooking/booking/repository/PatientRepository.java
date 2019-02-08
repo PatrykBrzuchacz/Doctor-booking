@@ -1,6 +1,6 @@
-package backend.doctorbooking.patient.repository;
+package backend.doctorbooking.booking.repository;
 
-import backend.doctorbooking.patient.model.Patient;
+import backend.doctorbooking.booking.model.Patient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

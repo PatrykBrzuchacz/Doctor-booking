@@ -1,4 +1,4 @@
-package backend.doctorbooking.patient.model;
+package backend.doctorbooking.booking.model;
 
 import backend.doctorbooking.common.security.model.User;
 import lombok.Data;

@@ -1,11 +1,11 @@
-package backend.doctorbooking.doctor.service;
+package backend.doctorbooking.booking.service.clinic;
 
 import backend.doctorbooking.common.security.model.User;
 import backend.doctorbooking.common.service.UserHelper;
-import backend.doctorbooking.doctor.model.Clinic;
-import backend.doctorbooking.doctor.model.Doctor;
-import backend.doctorbooking.doctor.repository.ClinicRepository;
-import backend.doctorbooking.doctor.repository.DoctorRepository;
+import backend.doctorbooking.booking.model.clinic.Clinic;
+import backend.doctorbooking.booking.model.Doctor;
+import backend.doctorbooking.booking.repository.clinic.ClinicRepository;
+import backend.doctorbooking.booking.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;

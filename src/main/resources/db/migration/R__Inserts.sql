@@ -12,3 +12,6 @@ INSERT INTO user(username, password,id_role) VALUES
 
 INSERT INTO user(username, password,id_role) VALUES
  ('doctor', '$2a$11$qZd1vIxiyzJ.1q3XY4in5.TW5jteWh0Y1wKq8HfqL1Ichcjuvqxo6', 3);
+
+INSERT INTO patient(id,user_id) values (1,2);
+INSERT INTO doctor(id,user_id) values (1,3);

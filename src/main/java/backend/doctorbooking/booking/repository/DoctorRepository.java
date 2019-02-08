@@ -1,7 +1,7 @@
-package backend.doctorbooking.doctor.repository;
+package backend.doctorbooking.booking.repository;
 
 import backend.doctorbooking.common.security.model.User;
-import backend.doctorbooking.doctor.model.Doctor;
+import backend.doctorbooking.booking.model.Doctor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.security.access.prepost.PreAuthorize;

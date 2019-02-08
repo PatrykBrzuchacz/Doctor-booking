@@ -1,9 +1,8 @@
-package backend.doctorbooking.doctor.controller;
+package backend.doctorbooking.booking.controller;
 
-import backend.doctorbooking.doctor.model.ClinicBranch;
-import backend.doctorbooking.doctor.model.ClinicType;
-import backend.doctorbooking.doctor.repository.ClinicRepository;
-import backend.doctorbooking.doctor.service.ClinicBranchService;
+import backend.doctorbooking.booking.model.clinic.ClinicBranch;
+import backend.doctorbooking.booking.repository.clinic.ClinicRepository;
+import backend.doctorbooking.booking.service.clinic.ClinicBranchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;

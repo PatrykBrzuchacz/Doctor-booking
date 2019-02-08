@@ -1,9 +1,9 @@
-package backend.doctorbooking.patient.model;
+package backend.doctorbooking.booking.model;
 
 
+import backend.doctorbooking.booking.model.clinic.ClinicBranch;
 import backend.doctorbooking.common.security.model.User;
-import backend.doctorbooking.doctor.model.Clinic;
-import backend.doctorbooking.doctor.model.ClinicBranch;
+import backend.doctorbooking.booking.model.clinic.Clinic;
 import lombok.Data;
 
 import javax.persistence.*;

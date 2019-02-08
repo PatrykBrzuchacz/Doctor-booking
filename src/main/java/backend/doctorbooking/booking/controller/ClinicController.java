@@ -1,7 +1,7 @@
-package backend.doctorbooking.doctor.controller;
+package backend.doctorbooking.booking.controller;
 
-import backend.doctorbooking.doctor.model.Clinic;
-import backend.doctorbooking.doctor.service.ClinicService;
+import backend.doctorbooking.booking.model.clinic.Clinic;
+import backend.doctorbooking.booking.service.clinic.ClinicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.http.HttpStatus;
@@ -10,7 +10,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 @RepositoryRestController
 @RequestMapping("/api/clinics")

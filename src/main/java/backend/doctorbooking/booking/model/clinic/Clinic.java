@@ -1,6 +1,6 @@
-package backend.doctorbooking.doctor.model;
+package backend.doctorbooking.booking.model.clinic;
 
-import backend.doctorbooking.common.security.model.User;
+import backend.doctorbooking.booking.model.Doctor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

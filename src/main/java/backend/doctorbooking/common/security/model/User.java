@@ -1,7 +1,7 @@
 package backend.doctorbooking.common.security.model;
 
-import backend.doctorbooking.doctor.model.Doctor;
-import backend.doctorbooking.patient.model.Patient;
+import backend.doctorbooking.booking.model.Doctor;
+import backend.doctorbooking.booking.model.Patient;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;

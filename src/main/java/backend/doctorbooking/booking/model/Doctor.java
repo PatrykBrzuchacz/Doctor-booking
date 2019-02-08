@@ -1,5 +1,7 @@
-package backend.doctorbooking.doctor.model;
+package backend.doctorbooking.booking.model;
 
+import backend.doctorbooking.booking.model.clinic.Clinic;
+import backend.doctorbooking.booking.model.clinic.ClinicBranch;
 import backend.doctorbooking.common.security.model.User;
 import lombok.Data;
 
@@ -12,10 +14,10 @@ import java.util.List;
 public class Doctor {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-  //  @OneToMany(mappedBy = "doctor")
+  //  @OneToMany(mappedBy = "booking")
    // private List<ReservationRequest> reservationRequests = new ArrayList<>();
 
     @OneToOne
