@@ -1,4 +1,4 @@
-package backend.doctorbooking.booking.controller;
+package backend.doctorbooking.booking.controller.Clinic;
 
 import backend.doctorbooking.booking.model.clinic.Clinic;
 import backend.doctorbooking.booking.service.clinic.ClinicService;
