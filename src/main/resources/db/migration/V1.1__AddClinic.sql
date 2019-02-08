@@ -4,11 +4,8 @@ CREATE TABLE `clinic` (
 `street` varchar(255),
 `house_number` BIGINT NOT NULL,
 `owner_id` BIGINT NOT NULL,
-PRIMARY KEY (`id`),
-CONSTRAINT `fk_clinic_owner`
-FOREIGN KEY(`owner_id`) REFERENCES `user` (`id`)
- ON DELETE cascade
- ON UPDATE CASCADE);
+PRIMARY KEY (`id`));
+
 
 
 CREATE TABLE `clinic_branch` (
