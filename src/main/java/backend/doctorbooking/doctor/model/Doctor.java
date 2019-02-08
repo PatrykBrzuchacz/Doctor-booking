@@ -25,4 +25,8 @@ public class Doctor {
     @ManyToOne
     @JoinColumn(name = "clinic_branch_id")
     private ClinicBranch clinicBranch;
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Clinic> clinics = new ArrayList<>();
+
 }

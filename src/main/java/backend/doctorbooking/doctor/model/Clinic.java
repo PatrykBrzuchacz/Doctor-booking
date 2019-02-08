@@ -1,7 +1,9 @@
 package backend.doctorbooking.doctor.model;
 
 import backend.doctorbooking.common.security.model.User;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 import javax.persistence.*;
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Clinic {
 
     @Id
@@ -19,12 +23,11 @@ public class Clinic {
     private String city;
     private String street;
 
-    @Column(name="house_number")
     private int houseNumber;
 
     @NonNull
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    private User owner;
+    private Doctor owner;
 
     @OneToMany(mappedBy = "clinic", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ClinicBranch> clinicBranches = new ArrayList<>();

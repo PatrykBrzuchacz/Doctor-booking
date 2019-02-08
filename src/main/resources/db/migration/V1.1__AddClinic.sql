@@ -2,7 +2,7 @@ CREATE TABLE `clinic` (
 `id` BIGINT NOT NULL AUTO_INCREMENT,
 `city` varchar(255) NOT NULL,
 `street` varchar(255),
-`house_number` BIGINT NOT NULL,
+`house_number` INT(4) NOT NULL DEFAULT '1',
 `owner_id` BIGINT NOT NULL,
 PRIMARY KEY (`id`));
 
