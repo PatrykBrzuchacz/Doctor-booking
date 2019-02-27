@@ -22,7 +22,7 @@ public class Clinic {
 
     private String city;
     private String street;
-
+    private String name;
     private int houseNumber;
 
     @NonNull

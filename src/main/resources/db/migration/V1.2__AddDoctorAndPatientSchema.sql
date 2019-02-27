@@ -1,9 +1,7 @@
 create table doctor (
 `id` BIGINT AUTO_INCREMENT,
 `user_id` BIGINT NOT NULL,
-`clinic_branch_id` BIGINT,
 PRIMARY KEY(`id`),
-FOREIGN KEY(`clinic_branch_id`) references `clinic_branch` (`id`) on delete no action on update cascade,
 FOREIGN KEY(`user_id`) references `user` (`id`) on delete cascade on update cascade
 );
 
@@ -12,6 +10,14 @@ create table patient (
 `user_id` BIGINT NOT NULL,
 PRIMARY KEY(`id`),
 FOREIGN KEY(`user_id`) references `user` (`id`) on delete cascade on update cascade
+);
+
+create table doctor_branch (
+`doctor_id` BIGINT,
+`branch_id` BIGINT,
+Primary Key(`doctor_id`, `branch_id`),
+FOREIGN KEY (doctor_id) references doctor(id),
+FOREIGN KEY (branch_id) references clinic_branch(id)
 );
 
 alter table clinic

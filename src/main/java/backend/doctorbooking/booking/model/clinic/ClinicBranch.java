@@ -26,6 +26,6 @@ public class ClinicBranch {
     private Clinic clinic;
 
 
-    @OneToMany(mappedBy = "clinicBranch")
+    @ManyToMany(mappedBy = "clinicBranchs")
     private List<Doctor> doctors = new ArrayList<>();
 }

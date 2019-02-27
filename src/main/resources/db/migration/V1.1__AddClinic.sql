@@ -1,5 +1,6 @@
 CREATE TABLE `clinic` (
 `id` BIGINT NOT NULL AUTO_INCREMENT,
+`name` varchar(255) NOT NULL,
 `city` varchar(255) NOT NULL,
 `street` varchar(255),
 `house_number` INT(4) NOT NULL DEFAULT '1',
